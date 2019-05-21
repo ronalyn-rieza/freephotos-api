@@ -28,7 +28,12 @@ if($num == 1){
   //set image file path to download
   $image_filepath ="../../img/".$image_filename;
   //download file
-  download_file($image_filepath);
+  if(download_file($image_filepath)){
+    //no images
+    echo json_encode(
+      array('message' => 'Image has been Downloaded')
+    );
+  }
 
 }else{
   //no images
